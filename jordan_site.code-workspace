@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "jordanpb.com",
+			"path": "."
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
