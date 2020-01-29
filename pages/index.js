@@ -1,7 +1,15 @@
 
-const Index = () => (
 
-    <div style={StyleSheet.container}>
+
+class Index extends React.Component {
+
+    const styles = {
+        align:'center', 
+        textAlign:'center', 
+        margin:'auto',
+    }
+
+    <div style={styles}>
         <p>Hello World</p>
     </div>
 
@@ -13,7 +21,7 @@ const Index = () => (
 
     // `}</style>
 
-);
+};
 
 
 export default Index;
