@@ -2,25 +2,30 @@
 
 
 class Index extends React.Component {
+    render(){
+        const styles = {
+            width:'10%',
+            align:'center', 
+            textAlign:'center', 
+            margin:'auto',
+            backgroundColor:'cyan'
+        }
+        return(
+        <div>
+            <div style={styles}>
+                <p>Hello World</p>
+            </div>
+        </div>
 
-    const styles = {
-        align:'center', 
-        textAlign:'center', 
-        margin:'auto',
+        // <style>{`
+
+        //     container,main{
+        //         alig:center,
+        //     }
+
+        // `}</style>
+        );
     }
-
-    <div style={styles}>
-        <p>Hello World</p>
-    </div>
-
-    // <style>{`
-
-    //     container,main{
-    //         alig:center,
-    //     }
-
-    // `}</style>
-
 };
 
 
