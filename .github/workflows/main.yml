@@ -18,4 +18,4 @@ jobs:
       - name: Deploy to Firebase
         run: |
           echo Deploying to firebase...
-          firebase deploy --token ${{FIREBASE_TOKEN}}
+          firebase deploy --token ${{secrets.FIREBASE_TOKEN}}
