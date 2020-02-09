@@ -6,16 +6,15 @@ on:
     - master
 
 jobs:
-  build:
+  firebase-deploy:
 
     runs-on: ubuntu-latest
 
-
     steps:
-      - name: start
-        run: echo start of script...
-      - uses: lowply/deploy-firebase@v0.0.2 
       - name: Deploy to Firebase
-        run: |
-          echo Deploying to firebase...
-          firebase deploy --token ${{secrets.FIREBASE_TOKEN}}
+        run: echo Deploying to firebase...
+      - uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
