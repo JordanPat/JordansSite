@@ -12,11 +12,12 @@ jobs:
 
     steps:
       - name: Testing Workflow
-      - uses: w9jds/firebase-action@master
+      - uses: actions/checkout@master
       - run: |
           echo Deploying to firebase... && pwd && whoami && ls -la
           ls -la ..
       - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
