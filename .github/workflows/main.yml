@@ -13,8 +13,7 @@ jobs:
     steps:
       - name: Deploy to Firebase
         run: |
-          echo Deploying to firebase...
-          pwd && whoami && ls -la
+          echo Deploying to firebase... && pwd && whoami && ls -la
       - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
