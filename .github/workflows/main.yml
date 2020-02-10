@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Testing Workflow
         run: |
-          echo testing action && pwd && whoami && ls -la
-          ls -la ..
+          echo testing action && pwd && whoami && ls
+          ls -l
       - name: Echo step
         run: |
           echo Deploying to firebase...
