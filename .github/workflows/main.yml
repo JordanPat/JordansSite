@@ -13,8 +13,11 @@ jobs:
     steps:
       - name: Testing Workflow
         run: |
-          echo Deploying to firebase... && pwd && whoami && ls -la
+          echo testing action && pwd && whoami && ls -la
           ls -la ..
+      - name: Echo step
+        run: |
+          echo Deploying to firebase...
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
