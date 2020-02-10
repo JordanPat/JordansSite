@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Testing Workflow
-        run: |
+      - run: |
           echo Deploying to firebase... && pwd && whoami && ls -la
           ls -la ..
       - name: Deploy to Firebase
