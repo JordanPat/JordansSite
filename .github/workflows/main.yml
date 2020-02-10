@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - name: Testing Workflow
+      - uses: actions/checkout@master
       - run: |
           echo Deploying to firebase... && pwd && whoami && ls -la
           ls -la ..
