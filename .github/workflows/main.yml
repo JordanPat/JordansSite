@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v1
       - name: Testing Workflow
         run: |
           echo testing action && pwd && whoami && ls
@@ -21,7 +22,9 @@ jobs:
       - name: Echo step
         run: |
           echo Deploying to firebase...
-      - name: Install Firebase
-        run: npm install firebase-tools
-      - name: deploy
-        run: firebase deploy --only hosting --token ${{secrets.FIREBASE_TOKEN}}
+      - name: Deploy to Firebase	      
+        uses: w9jds/firebase-action@master	       
+        with:
+          args: deploy --only hosting	        
+        env:	
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
