@@ -21,9 +21,7 @@ jobs:
       - name: Echo step
         run: |
           echo Deploying to firebase...
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Install Firebase
+        run: npm install firebase-tools
+      - name: deploy
+        run: firebase deploy --only hosting --token ${{secrets.FIREBASE_TOKEN}}
