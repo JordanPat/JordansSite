@@ -1,0 +1,30 @@
+name: Firebase Deploy
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  firebase-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Testing Workflow
+        run: |
+          echo testing action && pwd && whoami && ls
+          ls -la
+          ls -la ..
+          ls -la ../../
+          ls -la ../../../
+      - name: Echo step
+        run: |
+          echo Deploying to firebase...
+      - name: Deploy to Firebase	      
+        uses: w9jds/firebase-action@master	       
+        with:
+          args: deploy --only hosting	        
+        env:	
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
