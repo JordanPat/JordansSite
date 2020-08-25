@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({title, body, projectImages}) =
 
     return (
       <Carousel.Item>
-        <img src={projectImages?.[0]}/>
+        <img src={projectImages?.[0]} style={{width:"100%", height: "50%"}}/>
       </Carousel.Item>
     
     );
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({title, body, projectImages}) =
 
   return (
     <>
-        <Card border="primary" style={{width: '20em'}}>
+        <Card border="primary" style={{}}>
           <Carousel>
             {/* <Carousel.Item>
               <img className="" alt="Portfolio site" src={"/imgs/portfolioSite.png"} style={{width:"100%", height: "100%"}}/>
@@ -38,7 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({title, body, projectImages}) =
             <Carousel.Item>
                 <img className="" alt="CV" src={'https://docs.google.com/document/d/1wF3zutNxZVcCZicvzA6lWvpWTbLontrPdGXB7OkF3y8/edit?usp=sharing'} style={{width:"100%", height: "100%"}}/>
             </Carousel.Item> */} 
-          {createCarousel}
+          {createCarousel()}
 
           </Carousel>
           <Card.Body>
@@ -48,11 +48,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({title, body, projectImages}) =
             </Card.Text>
             <Button variant="primary" onClick={handleShow}>Info</Button>
           </Card.Body>
+          {/* react modal */}
+          <MyModal title="mymodal"></MyModal>
         </Card>
-        {/* react rah modal */}
-        <MyModal title="mymodal"></MyModal>
 
-        <Modal show={show} onHide={handleClose}>
+
+{/*     <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
@@ -68,7 +69,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({title, body, projectImages}) =
                 <Button variant="secondary" onClick={handleClose}>Close</Button>
             </Modal.Footer>
         </Modal>
-        <Button onClick={createCarousel}>get images</Button>
+        <Button onClick={createCarousel}>get images</Button> */}
     </>
   
   );

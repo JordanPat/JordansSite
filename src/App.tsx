@@ -43,10 +43,11 @@ const App: React.FC = () => {
           </Nav.Item>
         </Nav>
       </Row>
-      {/* first row */}
       <Row className="" style={{alignItems:"center", justifyContent:"center"}}>
-        {/* card 1 with bootstrap */}
-        <CardDeck style={{borderWidth:"5px", borderColor:"black"}}>
+
+        <CardColumns style={{borderColor:"black"}}>
+          {/* <Col> */}
+          {/* RAH card  */}
           <Card border="primary" style={{width: '20em'}}>
             <Carousel>
               <Carousel.Item>
@@ -73,98 +74,92 @@ const App: React.FC = () => {
               <Button variant="primary" onClick={handleShow}>Info</Button>
             </Card.Body>
           </Card>
-            
-            {/* react rah modal */}
-            <Modal show={show} onHide={handleClose}>
-              <Modal.Header closeButton>
-                <Modal.Title>UAH ML Air Hockey</Modal.Title>
-              </Modal.Header>
-              <ModalBody>
-                <ul className="w3-ul w3-border w3-hoverable w3-large w3-left-align">
-                  <li>Machine learning paddle arm using tensorflow in python</li>
-                  <li>Propotional integral derivative (PID) controlled opponent paddle</li>
-                  <li>Puck tracking using OpenCV computer vision</li>
-                  <li>Arduino controlled servo system</li>
-                </ul>
-              </ModalBody>
-              <Modal.Footer>
-                <Button variant="link" href="https://github.com/ChargerAirHockey?tab=repositories">Github Project Link</Button>
-                <Button variant="secondary" onClick={handleClose}>Close</Button>
-              </Modal.Footer>
-            </Modal>
-          {/* react card 3 */}
+          {/* RAH modal */}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>UAH ML Air Hockey</Modal.Title>
+            </Modal.Header>
+            <ModalBody>
+              <ul className="w3-ul w3-border w3-hoverable w3-large w3-left-align">
+                <li>Machine learning paddle arm using tensorflow in python</li>
+                <li>Propotional integral derivative (PID) controlled opponent paddle</li>
+                <li>Puck tracking using OpenCV computer vision</li>
+                <li>Arduino controlled servo system</li>
+              </ul>
+            </ModalBody>
+            <Modal.Footer>
+              <Button variant="link" href="https://github.com/ChargerAirHockey?tab=repositories">Github Project Link</Button>
+              <Button variant="secondary" onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+          
+          {/* Pillowfluffer card */}
           <ProjectCard title="Pillow Fluffer 2000" body="body text here!!" projectImages={siteImages.PillowFluffer}></ProjectCard>
-
-      {/* first row end */} 
-
-      {/* second row */} 
-
-          {/* <!--card 2--> */}
-          <div className="w3-card w3-center w3-margin" style={{maxWidth:"40em"}}>
-            <div className="w3-display-container w3-text-black">
-              <img className="" alt="missing img" src="/imgs/portfolioSite.png" style={{width:"100%"}}/>
-              <div className="w3-large w3-display-bottomleft w3-padding w3-light-grey">
-                <p style={{fontWeight: "bold"}}>Jordan Barrilleaux Portfolio Site</p>
-              </div>
-            </div>
-            <div className="">
-              <button className="w3-button w3-black">Details</button>
-            </div>
-            {/* <!--Portfolio Modal--> */}
-            <div id="id02" className="w3-modal">
-              <div className="w3-modal-content w3-animate-top w3-card-4">
-                <header className="w3-container w3-teal"> 
-                  <span 
-                  className="w3-button w3-display-topright">&times;</span>
-                  <h2>Jordan Barrilleaux Portfolio Site</h2>
-                </header>
-                <ul className="w3-ul w3-border w3-hoverable w3-large w3-left-align">
-                  <li>Built with ReactJS</li>
-                  <li>react-bootstrap component library for style</li>
-                  <li>Hosted using Google Firebase</li>
+          {/* Pillowfluffer modal */}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>Pillow Fluffer 2000</Modal.Title>
+            </Modal.Header>
+            <ModalBody>
+                <ul className="">
+                    <li>Built with ReactJS and Typescript</li>
+                    <li>Bootstrap components for style</li>
+                    <li>Hosted using Google Firebase</li>
                 </ul>
-                <a href="https://github.com/JordanPat/JordansSite"><p>Link to portfolio site Guthub</p></a>
-              </div>
-            </div>
-          </div>
-
-          {/* <!--Card 4--> */}
-          <div className="w3-card w3-center w3-margin" style={{maxWidth:"40em"}}>
-            <div className="w3-display-container w3-text-black">
-              <img className="" alt="missing img" src="/imgs/2TapTimer/timerSelect.PNG" style={{width:"100%"}}/>
-              <div className="w3-large w3-display-bottomleft w3-padding w3-light-grey">
-                <p style={{fontWeight: "bold"}}>COMING SOON- Easy Timer React Native App</p>
-              </div>
-            </div>
-            <div className="">
-              <button className="w3-button w3-black">Details</button>
-            </div>
-            {/* <!--Portfolio Modal--> */}
-            <div id="id04" className="w3-modal">
-              <div className="w3-modal-content w3-animate-top w3-card-4">
-                <header className="w3-container w3-teal"> 
-                  <span 
-                  className="w3-button w3-display-topright">&times;</span>
-                  <h2>Easy Timer React Native App</h2>
-                </header>
-                <ul className="w3-ul w3-border w3-hoverable w3-large w3-left-align">
-                  <li>Built with React Native and Nativebase</li>
-                  <li>start a timer in as little as 2 taps</li>
+            </ModalBody>
+            <Modal.Footer>
+                <Button variant="link" href="https://github.com/JordanPat/JordansSite">Github Project Link</Button>
+                <Button variant="secondary" onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+          {/* </Col>
+          <Col> */}
+          {/* <!--Portfolio card --> */}
+          <ProjectCard title="Jordan Barrilleaux Portfolio Site" body="body text here!!" projectImages={siteImages.portfolioSite}></ProjectCard>
+          {/* <!--Portfolio site Modal--> */}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>Jordan Barrilleaux Portfolio Site</Modal.Title>
+            </Modal.Header>
+            <ModalBody>
+                <ul className="">
+                    <li>Built with ReactJS and Typescript</li>
+                    <li>Bootstrap components for style</li>
+                    <li>Hosted using Google Firebase</li>
                 </ul>
-                <a href="https://github.com/JordanPat/"><p>Link to portfolio site Guthub</p></a>
-              </div>
-            </div>
-          </div>
-      </CardDeck>
+            </ModalBody>
+            <Modal.Footer>
+                <Button variant="link" href="https://github.com/JordanPat/JordansSite">Github Project Link</Button>
+                <Button variant="secondary" onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+          </Modal> 
+          
+          {/* <!-- Easy Timer Card--> */}
+          <ProjectCard title="COMING SOON- Easy Timer React Native App" body="body text here!!" projectImages={siteImages["2TapTimer"]}></ProjectCard>
+          {/* <!--timer Modal--> */}
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Easy Timer React Native App</Modal.Title>
+            </Modal.Header>
+            <ModalBody>
+              <ul className="w3-ul w3-border w3-hoverable w3-large w3-left-align">
+                <li>Built with React Native and Nativebase</li>
+                <li>start a timer in as little as 2 taps</li>
+              </ul>
+            </ModalBody>
+            <Modal.Footer>
+              <Button variant="link" href="https://github.com/JordanPat/">Github Project Link</Button>
+              <Button variant="secondary" onClick={handleClose}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+          {/* </Col> */}
+        </CardColumns>
       </Row>
 
       {/* // <!-- Footer --> */}
       <footer className="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
         <a href="https://www.linkedin.com/in/jordan-barrilleaux-926b27155/"><i className="fa fa-linkedin w3-hover-opacity"></i></a>
       </footer>
-
-
-
 
       {/* <!-- The core Firebase JS SDK is always required and must be listed first --> */}
       <script src="/__/firebase/7.17.1/firebase-app.js"></script>

@@ -8,7 +8,7 @@ const MyModal = (props: { title: React.ReactNode; }) => {
     }
     return (
         <>
-        <Alert>
+        <Alert variant="warning">
             <Alert.Heading>Hello from MyModal</Alert.Heading>
         </Alert>
 
