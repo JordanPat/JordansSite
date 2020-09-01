@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -6,14 +6,33 @@ import ProjectCard from './components/ProjectCard';
 
 import siteImages from "./siteImages.json";
 
-import {Container, Row, Col, Nav, Button, Card, Carousel, Modal, ModalBody, Alert, CardDeck, CardColumns } from 'react-bootstrap';
+import {Container, Row, Col, Nav, Alert, CardColumns } from 'react-bootstrap';
 
+let count:number = 0;
 const App: React.FC = () => {
+  count++;
+  console.log("count -- " + count);
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const mlAirHockeyInfo = [
+    <li>Machine learning paddle arm using tensorflow in python</li>,
+    <li>Propotional integral derivative (PID) controlled opponent paddle</li>,
+    <li>Puck tracking using OpenCV computer vision</li>,
+    <li>Arduino controlled servo system</li>
+  ]
+  const pillowFlufferInfo = [
+    <li>Built with Unity and Maya</li>,
+    <li>Bootstrap components for style</li>,
+    <li>Hosted using Google Firebase</li>
+  ]
+  const portfolioSiteInfo = [
+    <li>Built with ReactJS and Typescript</li>,
+    <li>Bootstrap components for style</li>,
+    <li>Hosted using Google Firebase</li>
+  ]
+  const twoTapTimerInfo = [
+    <li>Built with React Native and Nativebase</li>,
+    <li>start a timer in as little as 2 taps</li>
+  ]
 
   return (
     <div className="App">
@@ -45,114 +64,52 @@ const App: React.FC = () => {
       </Row>
       <Row className="" style={{alignItems:"center", justifyContent:"center"}}>
 
-        <CardColumns style={{borderColor:"black"}}>
-          {/* <Col> */}
+        <CardColumns style={{}}>
+          {/* OLD HARD CODED CARD */}
+
           {/* RAH card  */}
-          <Card border="primary" style={{width: '20em'}}>
-            <Carousel>
-              <Carousel.Item>
-                <img className="" alt="poster img" src={"/imgs/MLAirHockey/Poster.png"} style={{width:"100%", height: "100%"}}/>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="" alt="mlah model" src={'./imgs/MLAirHockey/AirHockeyModel.jpeg'} style={{width:"100%", height: "100%"}}/>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="" alt="table picture" src={'./imgs/MLAirHockey/table.jpg'} style={{width:"100%", maxHeight: "100%"}}/>
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="" alt="hitrate graph" src={'./imgs/MLAirHockey/hitrate.png'} style={{width:"100%", maxHeight: "100%"}}/>                
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="" alt="MLSim" src={"/imgs/MLAirHockey/MLSim.png"} style={{width:"100%", maxHeight: "100%"}}/>
-              </Carousel.Item>
-            </Carousel>
-            <Card.Body>
-              <Card.Title>UAH Machine Learning Air Hockey Table</Card.Title>
-              <Card.Text>
-                body text here
-              </Card.Text>
-              <Button variant="primary" onClick={handleShow}>Info</Button>
-            </Card.Body>
-          </Card>
-          {/* RAH modal */}
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>UAH ML Air Hockey</Modal.Title>
-            </Modal.Header>
-            <ModalBody>
-              <ul className="w3-ul w3-border w3-hoverable w3-large w3-left-align">
-                <li>Machine learning paddle arm using tensorflow in python</li>
-                <li>Propotional integral derivative (PID) controlled opponent paddle</li>
-                <li>Puck tracking using OpenCV computer vision</li>
-                <li>Arduino controlled servo system</li>
-              </ul>
-            </ModalBody>
-            <Modal.Footer>
-              <Button variant="link" href="https://github.com/ChargerAirHockey?tab=repositories">Github Project Link</Button>
-              <Button variant="secondary" onClick={handleClose}>Close</Button>
-            </Modal.Footer>
-          </Modal>
+          <ProjectCard 
+            title="UAH Machine Learning Air Hockey Table" 
+            body="body text here!!" 
+            projectImages={siteImages.mlAirHockey} 
+            modalList={mlAirHockeyInfo} 
+            modalLink="https://github.com/ChargerAirHockey?tab=repositories"
+            >
+
+          </ProjectCard>
           
           {/* Pillowfluffer card */}
-          <ProjectCard title="Pillow Fluffer 2000" body="body text here!!" projectImages={siteImages.PillowFluffer}></ProjectCard>
-          {/* Pillowfluffer modal */}
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Pillow Fluffer 2000</Modal.Title>
-            </Modal.Header>
-            <ModalBody>
-                <ul className="">
-                    <li>Built with ReactJS and Typescript</li>
-                    <li>Bootstrap components for style</li>
-                    <li>Hosted using Google Firebase</li>
-                </ul>
-            </ModalBody>
-            <Modal.Footer>
-                <Button variant="link" href="https://github.com/JordanPat/JordansSite">Github Project Link</Button>
-                <Button variant="secondary" onClick={handleClose}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-          {/* </Col>
-          <Col> */}
+          <ProjectCard 
+            title="Pillow Fluffer 2000" 
+            body="body text here!!" 
+            projectImages={siteImages.pillowFluffer} 
+            modalList={pillowFlufferInfo} 
+            modalLink="https://github.com/JordanPat/pillow_fluffer_2000"
+            >
+
+          </ProjectCard>
+
           {/* <!--Portfolio card --> */}
-          <ProjectCard title="Jordan Barrilleaux Portfolio Site" body="body text here!!" projectImages={siteImages.portfolioSite}></ProjectCard>
-          {/* <!--Portfolio site Modal--> */}
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>Jordan Barrilleaux Portfolio Site</Modal.Title>
-            </Modal.Header>
-            <ModalBody>
-                <ul className="">
-                    <li>Built with ReactJS and Typescript</li>
-                    <li>Bootstrap components for style</li>
-                    <li>Hosted using Google Firebase</li>
-                </ul>
-            </ModalBody>
-            <Modal.Footer>
-                <Button variant="link" href="https://github.com/JordanPat/JordansSite">Github Project Link</Button>
-                <Button variant="secondary" onClick={handleClose}>Close</Button>
-            </Modal.Footer>
-          </Modal> 
+          <ProjectCard 
+            title="Jordan Barrilleaux Portfolio Site" 
+            body="body text here!!" 
+            projectImages={siteImages.portfolioSite} 
+            modalList={portfolioSiteInfo} 
+            modalLink="https://github.com/JordanPat/JordansSite"
+            >
+
+          </ProjectCard>
           
           {/* <!-- Easy Timer Card--> */}
-          <ProjectCard title="COMING SOON- Easy Timer React Native App" body="body text here!!" projectImages={siteImages["2TapTimer"]}></ProjectCard>
-          {/* <!--timer Modal--> */}
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Easy Timer React Native App</Modal.Title>
-            </Modal.Header>
-            <ModalBody>
-              <ul className="w3-ul w3-border w3-hoverable w3-large w3-left-align">
-                <li>Built with React Native and Nativebase</li>
-                <li>start a timer in as little as 2 taps</li>
-              </ul>
-            </ModalBody>
-            <Modal.Footer>
-              <Button variant="link" href="https://github.com/JordanPat/">Github Project Link</Button>
-              <Button variant="secondary" onClick={handleClose}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-          {/* </Col> */}
+          <ProjectCard 
+            title="COMING SOON- Easy Timer React Native App" 
+            body="body text here!!" 
+            projectImages={siteImages.twoTapTimer} 
+            modalList={twoTapTimerInfo} 
+            modalLink="https://github.com/JordanPat/"
+            >
+
+          </ProjectCard>
         </CardColumns>
       </Row>
 

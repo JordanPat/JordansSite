@@ -1,75 +1,78 @@
 import React, {useState} from 'react';
-import MyModal from './MyModal';
-import { Button, Card, Carousel, Modal, ModalBody } from 'react-bootstrap';
+import { Button, Card, Carousel, Modal } from 'react-bootstrap';
 
 
 // import poster from '../imgs/MLAirHockey/Poster.png'
 
-type ProjectCardProps = {
-    title?: string;
-    body?: string;
-    projectImages?:string[];
+interface ProjectCardProps {
+  title: string;
+  body?: string;
+  projectImages?:string[];
+  modalList: JSX.Element[];
+  modalLink: string;
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({title, body, projectImages}) => {
+let x:number = 0;
+const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
 
-  const createCarousel = () => {
-    console.log(projectImages?.[0]);
+  const [showModal, setShowModal] = useState(false); 
+  const handleShow = () => setShowModal(true);
+  const handleClose = () => {
+    console.log("handle close inside ProjectCard");
+    setShowModal(false);
+    // onClose;
+}
 
+  x++;
+  console.log("x --- " + x);
+
+  const createCarouselItem = (image: string) => {
     return (
       <Carousel.Item>
-        <img src={projectImages?.[0]} style={{width:"100%", height: "50%"}}/>
+        <img src={image} alt={image} style={{width:"100%", height: "50%"}}/>
       </Carousel.Item>
-    
-    );
+    ); 
   }
+  const createCarousel = () => {
+    let imgs:JSX.Element[] = [];
+    ProjectCardProps.projectImages?.forEach(image => {
+      imgs.push(createCarouselItem(image)); 
+    })
+    return imgs;
 
-  const [show, setShow] = useState(false); 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  };
 
   return (
     <>
         <Card border="primary" style={{}}>
           <Carousel>
-            {/* <Carousel.Item>
-              <img className="" alt="Portfolio site" src={"/imgs/portfolioSite.png"} style={{width:"100%", height: "100%"}}/>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img className="" alt="CV" src={'https://docs.google.com/document/d/1wF3zutNxZVcCZicvzA6lWvpWTbLontrPdGXB7OkF3y8/edit?usp=sharing'} style={{width:"100%", height: "100%"}}/>
-            </Carousel.Item> */} 
-          {createCarousel()}
-
+            {createCarousel()}
           </Carousel>
           <Card.Body>
-            <Card.Title>{title}</Card.Title>
+            <Card.Title>{ProjectCardProps.title}</Card.Title>
             <Card.Text>
-              {body}
+              {ProjectCardProps.body}
             </Card.Text>
             <Button variant="primary" onClick={handleShow}>Info</Button>
           </Card.Body>
-          {/* react modal */}
-          <MyModal title="mymodal"></MyModal>
         </Card>
 
-
-{/*     <Modal show={show} onHide={handleClose}>
+        <Modal show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>{title}</Modal.Title>
+                <Modal.Title>{ProjectCardProps.title}</Modal.Title>
             </Modal.Header>
-            <ModalBody>
+            <Modal.Body>
                 <ul className="">
-                    <li>Built with ReactJS and Typescript</li>
-                    <li>Bootstrap components for style</li>
-                    <li>Hosted using Google Firebase</li>
+                  {ProjectCardProps.modalList}
                 </ul>
-            </ModalBody>
+            </Modal.Body>
             <Modal.Footer>
-                <Button variant="link" href="https://github.com/JordanPat/JordansSite">Github Project Link</Button>
+                <Button variant="link" href={ProjectCardProps.modalLink} >Github Project Link</Button>
                 <Button variant="secondary" onClick={handleClose}>Close</Button>
             </Modal.Footer>
-        </Modal>
-        <Button onClick={createCarousel}>get images</Button> */}
+          </Modal>
+
+        {/* <Button onClick={createCarousel}>get images</Button> */}
     </>
   
   );

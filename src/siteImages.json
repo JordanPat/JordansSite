@@ -1,8 +1,8 @@
 {
-    "2TapTimer":[
+    "twoTapTimer":[
         "/imgs/2TapTimer/timerSelect.PNG"
     ],
-    "mlairhockey":[
+    "mlAirHockey":[
         "imgs/MLAirHockey/AirHockeyModel.jpeg",
         "imgs/MLAirHockey/hitrate.png",
         "imgs/MLAirHockey/MLSim.png",
@@ -11,11 +11,12 @@
         "imgs/MLAirHockey/stocl_model.JPG",
         "imgs/MLAirHockey/table.jpg"
     ],
-    "PillowFluffer":[
+    "pillowFluffer":[
         "imgs/PillowFluffer/Overhead.png",
         "imgs/PillowFluffer/pov.png",
         "imgs/PillowFluffer/unity.png"
-    ],    "portfolioSite": [
+    ],    
+    "portfolioSite": [
         "imgs/portfolioSite/portfolioSite.png"
     ]
 }
