@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
   const createCarouselItem = (image: string) => {
     return (
       <Carousel.Item>
-        <img src={image} alt={image} style={{width:"100%", height: "50%"}}/>
+        <img src={image} alt={image} style={{width:"100%", minHeight:"17em", maxHeight: "30em"}}/>
       </Carousel.Item>
     ); 
   }
@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
 
   return (
     <>
-        <Card border="primary" style={{}}>
+        <Card border="primary" style={{minHeight:"25em", maxHeight:"42em"}}>
           <Carousel>
             {createCarousel()}
           </Carousel>
