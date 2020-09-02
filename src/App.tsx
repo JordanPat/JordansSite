@@ -1,24 +1,20 @@
 import React from 'react';
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Row, Col, Alert, CardColumns } from 'react-bootstrap';
+import {Container, Row, Col, Alert } from 'react-bootstrap';
 
-import {Route, Switch, Link} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import CV from './pages/CV';
 import Contact from './pages/Contact';
 
-
-let count:number = 0;
 const App: React.FC = () => {
-  count++;
-  console.log("count -- " + count);
 
   return (
     <>
-    <Container>
+    <Container fluid>
       {/* <!-- Header --> */}
       {/* alert */}
       {/* <Row className="" style={{paddingTop:'2em'}}>
@@ -45,12 +41,27 @@ const App: React.FC = () => {
       </Row>
       
       <Switch>
-        <Route component={CV} path="/pages/CV" />
-        <Route component={Contact} path="/pages/Contact" />
-        <Route component={Home} path="/" />
+        <Route path="/pages/CV" exact component={CV} />
+        <Route path="/pages/Contact" exact component={Contact} />
+        <Route path="/"  component={Home} />
+        {/* <Route path="/" component={()=><>404 not found</>}  /> */}
       </Switch>
 
     </Container>  
+
+    {/* <!-- Footer --> */}
+    <Container fluid style={{backgroundColor:"lightgray"}}>
+      <Row style={{}}>
+        <Col className="justify-content-md-center" style={{}}> 
+          <Container style={{padding:"2em", maxWidth:"1%", maxHeight:"1%"}}>
+            <a href="https://www.linkedin.com/in/jordan-barrilleaux-926b27155/" style={{}}>
+              {/* <i className="fa fa-linkedin w3-hover-opacity"></i> */}
+              <img alt="linked in logo" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"/>
+            </a>
+          </Container>
+        </Col>
+      </Row>
+    </Container>
     </>
   
   );

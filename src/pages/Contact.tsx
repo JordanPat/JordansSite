@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {} from 'react';
 import { Row, Col, Alert, Container } from 'react-bootstrap';
 
 
@@ -8,7 +8,6 @@ interface ContactProps {
 
 };
 
-let x:number = 0;
 const Contact: React.FC<ContactProps> = (ContactProps) => {
     return(
         <>

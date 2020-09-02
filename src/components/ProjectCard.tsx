@@ -6,13 +6,14 @@ import { Button, Card, Carousel, Modal } from 'react-bootstrap';
 
 interface ProjectCardProps {
   title: string;
+  alert?: JSX.Element;
   body?: string;
   projectImages?:string[];
   modalList: JSX.Element[];
   modalLink: string;
 };
 
-let x:number = 0;
+
 const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
 
   const [showModal, setShowModal] = useState(false); 
@@ -23,8 +24,6 @@ const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
     // onClose;
 }
 
-  x++;
-  console.log("x --- " + x);
 
   const createCarouselItem = (image: string) => {
     return (
@@ -44,12 +43,12 @@ const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
 
   return (
     <>
-        <Card border="primary" style={{minHeight:"25em", maxHeight:"42em"}}>
+        <Card border="primary" style={{minHeight:"25em", maxHeight:"44em"}}>
           <Carousel>
             {createCarousel()}
           </Carousel>
           <Card.Body>
-            <Card.Title>{ProjectCardProps.title}</Card.Title>
+            <Card.Title>{ProjectCardProps.alert}{ProjectCardProps.title}</Card.Title>
             <Card.Text>
               {ProjectCardProps.body}
             </Card.Text>

@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {} from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Row, Col, Alert, CardColumns } from 'react-bootstrap';
+import {Container, Row, Alert, CardColumns } from 'react-bootstrap';
 
 import ProjectCard from '../components/ProjectCard';
 import siteImages from "../siteImages.json";
@@ -11,10 +11,8 @@ interface HomeProps {
 
 };
 
-let count:number = 0;
+
 const Home: React.FC = () => {
-  count++;
-  console.log("count -- " + count);
 
   const mlAirHockeyInfo = [
     <li>Machine learning paddle arm using tensorflow in python</li>,
@@ -48,7 +46,7 @@ const Home: React.FC = () => {
                 {/* RAH card  */}
                 <ProjectCard 
                     title="UAH Machine Learning Air Hockey Table" 
-                    body="body text here!!" 
+                    body="Python, TensorFlow, OpenCV, Firmware" 
                     projectImages={siteImages.mlAirHockey} 
                     modalList={mlAirHockeyInfo} 
                     modalLink="https://github.com/ChargerAirHockey?tab=repositories"
@@ -59,7 +57,7 @@ const Home: React.FC = () => {
                 {/* Pillowfluffer card */}
                 <ProjectCard 
                     title="Pillow Fluffer 2000" 
-                    body="body text here!!" 
+                    body="C#, Unity, Maya" 
                     projectImages={siteImages.pillowFluffer} 
                     modalList={pillowFlufferInfo} 
                     modalLink="https://github.com/JordanPat/pillow_fluffer_2000"
@@ -70,7 +68,7 @@ const Home: React.FC = () => {
                 {/* <!--Portfolio card --> */}
                 <ProjectCard 
                     title="Jordan Barrilleaux Portfolio Site" 
-                    body="body text here!!" 
+                    body="ReactJS, Typescript"
                     projectImages={siteImages.portfolioSite} 
                     modalList={portfolioSiteInfo} 
                     modalLink="https://github.com/JordanPat/JordansSite"
@@ -80,8 +78,9 @@ const Home: React.FC = () => {
                 
                 {/* <!-- Easy Timer Card--> */}
                 <ProjectCard 
-                    title="COMING SOON- Easy Timer React Native App" 
-                    body="body text here!!" 
+                    title="Easy Timer React Native App" 
+                    alert={<Alert variant="warning">COMING SOON</Alert>}
+                    body="React Native"
                     projectImages={siteImages.twoTapTimer} 
                     modalList={twoTapTimerInfo} 
                     modalLink="https://github.com/JordanPat/"
@@ -90,11 +89,7 @@ const Home: React.FC = () => {
                 </ProjectCard>
                 </CardColumns>
             </Row>
-
-            {/* // <!-- Footer --> */}
-            <footer className="w3-container w3-padding-64 w3-light-grey w3-center w3-large"> 
-                <a href="https://www.linkedin.com/in/jordan-barrilleaux-926b27155/"><i className="fa fa-linkedin w3-hover-opacity"></i></a>
-            </footer>
+            </Container>
 
             {/* <!-- The core Firebase JS SDK is always required and must be listed first --> */}
             <script src="/__/firebase/7.17.1/firebase-app.js"></script>
@@ -104,7 +99,7 @@ const Home: React.FC = () => {
 
             {/* <!-- Initialize Firebase --> */}
             <script src="/__/firebase/init.js"></script>
-            </Container>
+            
         </div>
     );
 }
