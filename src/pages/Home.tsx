@@ -78,15 +78,28 @@ const Home: React.FC = () => {
                 
                 {/* <!-- Easy Timer Card--> */}
                 <ProjectCard 
-                    title="Easy Timer React Native App" 
+                    title="Easy Timer Mobile App" 
                     alert={<Alert variant="warning">COMING SOON</Alert>}
                     body="React Native"
                     projectImages={siteImages.twoTapTimer} 
                     modalList={twoTapTimerInfo} 
-                    modalLink="https://github.com/JordanPat/"
+                    modalLink="https://github.com/JordanPat/twoTapTimer"
                     >
 
                 </ProjectCard>
+
+                {/* <!-- iWorkoutLog Card--> */}
+                {/* <ProjectCard 
+                    title="iWorkout Log Mobile App" 
+                    alert={<Alert variant="warning">COMING SOON</Alert>}
+                    body="React Native, Firebase Datastore, Firebase Auth"
+                    projectImages={siteImages.iWorkoutLog} 
+                    modalList={iWorkoutLogInfo} 
+                    modalLink="https://github.com/JordanPat/iWorkoutLog"
+                    >
+
+                </ProjectCard> */}
+
                 </CardColumns>
             </Row>
             </Container>
