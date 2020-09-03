@@ -6,7 +6,7 @@ import {NavLink as Link} from 'react-router-dom';
 const Navigation: React.FC = () => {
 
     return(
-        <Nav className="justify-content-center" activeKey="/home" variant="tabs">
+        <Nav className="justify-content-center" activeKey="/pages/Home" variant="tabs">
             <NavItem>
                 <Link to="/pages/Home" className="nav-link" activeClassName="active">Home</Link>
             </NavItem>

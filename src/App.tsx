@@ -5,15 +5,29 @@ import {Container, Row, Col, Alert } from 'react-bootstrap';
 
 import {Route, Switch} from 'react-router-dom';
 
+import firebase from 'firebase';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import CV from './pages/CV';
 import Contact from './pages/Contact';
 
-const App: React.FC = () => {
+var firebaseConfig = {
+  apiKey: "AIzaSyB7DSoBZ0mJKDr0Xcurau3e2NRogO_ixzk",
+  authDomain: "reactjs-portfolio-63b55.firebaseapp.com",
+  databaseURL: "https://reactjs-portfolio-63b55.firebaseio.com",
+  projectId: "reactjs-portfolio-63b55",
+  storageBucket: "reactjs-portfolio-63b55.appspot.com",
+  messagingSenderId: "872272415846",
+  appId: "1:872272415846:web:afc4a93fb1af53f4cb71a7",
+  measurementId: "G-W501E0HH51"
+};
 
+const App: React.FC = () => {
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
   return (
     <>
+    
     <Container fluid>
       {/* <!-- Header --> */}
       {/* alert */}
@@ -43,8 +57,9 @@ const App: React.FC = () => {
       <Switch>
         <Route path="/pages/CV" exact component={CV} />
         <Route path="/pages/Contact" exact component={Contact} />
-        <Route path="/"  component={Home} />
-        {/* <Route path="/" component={()=><>404 not found</>}  /> */}
+        <Route path="/pages/Home" exact component={Home} />
+        <Route path="/" exact component={Home} />
+        <Route path="/" component={()=><>404 not found</>}  />
       </Switch>
 
     </Container>  
@@ -52,16 +67,22 @@ const App: React.FC = () => {
     {/* <!-- Footer --> */}
     <Container fluid style={{backgroundColor:"lightgray"}}>
       <Row style={{}}>
-        <Col className="justify-content-md-center" style={{}}> 
-          <Container style={{padding:"2em", maxWidth:"1%", maxHeight:"1%"}}>
+        <Col className="text-center" style={{ paddingTop:"2em", paddingBottom:"2em"}}> 
             <a href="https://www.linkedin.com/in/jordan-barrilleaux-926b27155/" style={{}}>
-              {/* <i className="fa fa-linkedin w3-hover-opacity"></i> */}
               <img alt="linked in logo" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"/>
             </a>
-          </Container>
         </Col>
       </Row>
     </Container>
+
+    {/* <!-- The core Firebase JS SDK is always required and must be listed first --> */}
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+    {/* <!-- TODO: Add SDKs for Firebase products that you want to use 
+    https://firebase.google.com/docs/web/setup#available-libraries --> */}
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+
     </>
   
   );
