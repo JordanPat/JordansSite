@@ -1,21 +1,22 @@
 {
-    "2TapTimer":[
-        "/imgs/2TapTimer/timerSelect.PNG"
+    "twoTapTimer":[
+        "../imgs/2TapTimer/timerSelect.PNG"
     ],
-    "mlairhockey":[
-        "imgs/MLAirHockey/AirHockeyModel.jpeg",
-        "imgs/MLAirHockey/hitrate.png",
-        "imgs/MLAirHockey/MLSim.png",
-        "imgs/MLAirHockey/Poster.png",
-        "imgs/MLAirHockey/stick.jpg",
-        "imgs/MLAirHockey/stocl_model.JPG",
-        "imgs/MLAirHockey/table.jpg"
+    "mlAirHockey":[
+        "../imgs/MLAirHockey/AirHockeyModel.jpeg",
+        "../imgs/MLAirHockey/hitrate.png",
+        "../imgs/MLAirHockey/MLSim.png",
+        "../imgs/MLAirHockey/Poster.png",
+        "../imgs/MLAirHockey/stick.jpg",
+        "../imgs/MLAirHockey/stick_model.JPG",
+        "../imgs/MLAirHockey/table.jpg"
     ],
-    "PillowFluffer":[
-        "imgs/PillowFluffer/Overhead.png",
-        "imgs/PillowFluffer/pov.png",
-        "imgs/PillowFluffer/unity.png"
-    ],    "portfolioSite": [
-        "imgs/portfolioSite/portfolioSite.png"
+    "pillowFluffer":[
+        "../imgs/PillowFluffer/Overhead.png",
+        "../imgs/PillowFluffer/pov.png",
+        "../imgs/PillowFluffer/unity.png"
+    ],    
+    "portfolioSite": [
+        "../imgs/PortfolioSite/portfolioSite.png"
     ]
 }
