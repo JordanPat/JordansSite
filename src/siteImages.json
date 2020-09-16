@@ -1,6 +1,7 @@
 {
     "twoTapTimer":[
-        "../imgs/2TapTimer/timerSelect.PNG"
+        "../imgs/TwoTapTimer/timerSelect.PNG",
+        "../imgs/TwoTapTimer/timerDisplay.PNG"
     ],
     "mlAirHockey":[
         "../imgs/MLAirHockey/AirHockeyModel.jpeg",
