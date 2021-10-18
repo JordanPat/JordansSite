@@ -2,7 +2,7 @@
   "name": "jordanpb.com",
   "version": "1.0.0",
   "description": "Beginning of my Website",
-  "main": "index.js",
+  "main": "./pages/index.html",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -20,9 +20,9 @@
   },
   "homepage": "https://github.com/JordanPat/JordansSite#readme",
   "dependencies": {
-    "next": "^9.2.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
-  },
-  "devDependencies": {}
+    "next": "^11.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+  
 }
