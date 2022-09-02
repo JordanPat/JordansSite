@@ -11,6 +11,9 @@
 # production
 /build
 
+# next cache
+.next/
+
 # misc
 .DS_Store
 .env.local
