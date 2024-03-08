@@ -3,9 +3,11 @@ import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col, Alert } from 'react-bootstrap';
 
-import {Route, Switch} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 
-import firebase from 'firebase';
+import firebase from 'firebase/compat/app';
+import 'firebase/storage'
+import { getAnalytics } from 'firebase/analytics'
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import CV from './pages/CV';
@@ -13,7 +15,7 @@ import Contact from './pages/Contact';
 
 var firebaseConfig = {
   apiKey: "AIzaSyB7DSoBZ0mJKDr0Xcurau3e2NRogO_ixzk",
-  authDomain: "reactjs-portfolio-63b55.firebaseapp.com",
+  authDomain: "reactjs-portfolio-63b55.firebaseaprp.com",
   databaseURL: "https://reactjs-portfolio-63b55.firebaseio.com",
   projectId: "reactjs-portfolio-63b55",
   storageBucket: "reactjs-portfolio-63b55.appspot.com",
@@ -23,8 +25,8 @@ var firebaseConfig = {
 };
 
 const App: React.FC = () => {
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  const app = firebase.initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
   return (
     <>
     
@@ -54,13 +56,13 @@ const App: React.FC = () => {
         </Col>
       </Row>
       
-      <Switch>
-        <Route path="/pages/CV" exact component={CV} />
-        <Route path="/pages/Contact" exact component={Contact} />
-        <Route path="/pages/Home" exact component={Home} />
-        <Route path="/" exact component={Home} />
-        <Route path="/" component={()=><>404 not found</>}  />
-      </Switch>
+      <Routes>
+        <Route path="/pages/CV" element={<CV/>} />
+        <Route path="/pages/Contact" element={<Contact/>} />
+        <Route path="/pages/Home" element={<Home/>} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<>404 not found</>}  />
+      </Routes>
 
     </Container>  
 

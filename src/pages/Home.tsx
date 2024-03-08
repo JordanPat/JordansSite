@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Row, Alert, CardColumns } from 'react-bootstrap';
+import {Container, Alert, Card, Col, Row } from 'react-bootstrap';
 
 import ProjectCard from '../components/ProjectCard';
 import siteImages from "../siteImages.json";
@@ -38,9 +38,9 @@ const Home: React.FC = () => {
     return(
         <div className="App">
             <Container >
-            <Row className="" style={{alignItems:"center", justifyContent:"center"}}>
+            <Row xs={1} md={2} className="" style={{alignItems:"center", justifyContent:"center"}}>
 
-                <CardColumns style={{}}>
+                {/* <Card style={{width: '30rem'}}> */}
                 {/* OLD HARD CODED CARD */}
 
                 {/* RAH card  */}
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
                     >
 
                 </ProjectCard>
-                
+                <br/>
                 {/* Pillowfluffer card */}
                 <ProjectCard 
                     title="Pillow Fluffer 2000" 
@@ -62,9 +62,10 @@ const Home: React.FC = () => {
                     modalList={pillowFlufferInfo} 
                     modalLink="https://github.com/JordanPat/pillow_fluffer_2000"
                     >
-
                 </ProjectCard>
-
+                </Row>
+              <Row xs={1} md={2} className="" style={{alignItems:"center", justifyContent:"center"}}>
+                <br/>
                 {/* <!--Portfolio card --> */}
                 <ProjectCard 
                     title="Jordan Barrilleaux Portfolio Site" 
@@ -75,7 +76,7 @@ const Home: React.FC = () => {
                     >
 
                 </ProjectCard>
-                
+                <br/>
                 {/* <!-- Easy Timer Card--> */}
                 <ProjectCard 
                     title="Easy Timer Mobile App" 
@@ -87,7 +88,7 @@ const Home: React.FC = () => {
                     >
 
                 </ProjectCard>
-
+                <br/>
                 {/* <!-- iWorkoutLog Card--> */}
                 {/* <ProjectCard 
                     title="iWorkout Log Mobile App" 
@@ -100,7 +101,7 @@ const Home: React.FC = () => {
 
                 </ProjectCard> */}
 
-                </CardColumns>
+                {/* </Card> */}
             </Row>
             </Container>
             
