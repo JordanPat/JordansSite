@@ -21,10 +21,10 @@ jobs:
           ls -la ../../../
       - name: Echo step
         run: |
-          echo Deploying to firebase...
+          echo Deploying to firebase... 
       - name: Deploy to Firebase	      
         uses: w9jds/firebase-action@master	       
         with:
-          args: deploy --only hosting	        
+          args: deploy -P live --only hosting:jordanportfoliosite   
         env:	
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
