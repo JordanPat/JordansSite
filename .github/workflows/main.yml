@@ -21,7 +21,7 @@ jobs:
           ls -la ../../../
       - name: Echo step
         run: |
-          echo Deploying to firebase... && \
+          echo Deploying to firebase... 
           firebase use live
       - name: Deploy to Firebase	      
         uses: w9jds/firebase-action@master	       
