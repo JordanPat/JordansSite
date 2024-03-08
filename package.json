@@ -1,27 +1,59 @@
 {
-  "name": "jordanpb.com",
-  "version": "1.0.0",
-  "description": "Beginning of my Website",
-  "main": "./pages/index.html",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+  "name": "reactjs-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/babel__traverse": "7.20.5",
+    "@types/jest": "^29.5.12",
+    "@types/react-router-dom": "5.3.3",
+    "bootstrap": "^5.3.3",
+    "firebase": "^10.8.1",
+    "firebase-cli": "^1.2.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "typescript": "^5.4.2"
   },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "yarn build && firebase deploy --only hosting",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "/src/index.js",
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JordanPat/JordansSite.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "reactjs"
+  ],
+  "author": "Jordan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JordanPat/JordansSite/issues"
-  },
-  "homepage": "https://github.com/JordanPat/JordansSite#readme",
-  "dependencies": {
-    "next": "^13.5.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
   }
 }

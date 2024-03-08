@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "jordanportfoliosite"
+    "default": "reactjs-portfolio-63b55",
+    "live": "jordanportfoliosite"
   }
 }

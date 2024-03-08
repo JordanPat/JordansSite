@@ -1,0 +1,23 @@
+{
+    "twoTapTimer":[
+        "../imgs/TwoTapTimer/timerSelect.PNG",
+        "../imgs/TwoTapTimer/timerDisplay.PNG"
+    ],
+    "mlAirHockey":[
+        "../imgs/MLAirHockey/AirHockeyModel.jpeg",
+        "../imgs/MLAirHockey/hitrate.png",
+        "../imgs/MLAirHockey/MLSim.png",
+        "../imgs/MLAirHockey/Poster.png",
+        "../imgs/MLAirHockey/stick.jpg",
+        "../imgs/MLAirHockey/stick_model.JPG",
+        "../imgs/MLAirHockey/table.jpg"
+    ],
+    "pillowFluffer":[
+        "../imgs/PillowFluffer/Overhead.png",
+        "../imgs/PillowFluffer/pov.png",
+        "../imgs/PillowFluffer/unity.png"
+    ],    
+    "portfolioSite": [
+        "../imgs/PortfolioSite/portfolioSite.png"
+    ]
+}
