@@ -11,20 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Testing Workflow
-        run: |
-          echo testing action && pwd && whoami && ls
-          ls -la
-          ls -la ..
-          ls -la ../../
-          ls -la ../../../
-      - name: Echo step
-        run: |
-          echo Deploying to firebase... 
-      - name: Deploy to Firebase	      
-        uses: w9jds/firebase-action@master	       
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
         with:
-          args: deploy -P live --only hosting:jordanportfoliosite   
-        env:	
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          node-version: '20'
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Test
+        run: yarn test --watchAll=false
+      - name: Build
+        run: yarn build
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+      - name: Deploy to Firebase
+        run: npx firebase-tools@13 deploy -P live --only hosting:jordanportfoliosite
