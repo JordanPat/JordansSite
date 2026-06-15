@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Alert, Col, Row } from 'react-bootstrap';
+import { Container, Alert, Row } from 'react-bootstrap';
 
 import ProjectCard from '../components/ProjectCard';
 import siteImages from "../siteImages.json";
