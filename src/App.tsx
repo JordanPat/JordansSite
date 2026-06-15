@@ -1,21 +1,19 @@
 import React from 'react';
 import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Row, Col, Alert } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
-import {Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import firebase from 'firebase/compat/app';
-import 'firebase/storage'
 import { getAnalytics } from 'firebase/analytics'
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import CV from './pages/CV';
 import Contact from './pages/Contact';
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyB7DSoBZ0mJKDr0Xcurau3e2NRogO_ixzk",
-  authDomain: "reactjs-portfolio-63b55.firebaseaprp.com",
+  authDomain: "reactjs-portfolio-63b55.firebaseapp.com",
   databaseURL: "https://reactjs-portfolio-63b55.firebaseio.com",
   projectId: "reactjs-portfolio-63b55",
   storageBucket: "reactjs-portfolio-63b55.appspot.com",
@@ -24,23 +22,14 @@ var firebaseConfig = {
   measurementId: "G-W501E0HH51"
 };
 
+const app = firebase.initializeApp(firebaseConfig);
+getAnalytics(app);
+
 const App: React.FC = () => {
-  const app = firebase.initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
   return (
     <>
     
     <Container fluid>
-      {/* <!-- Header --> */}
-      {/* alert */}
-      {/* <Row className="" style={{paddingTop:'2em'}}>
-        <Col className="text-center">
-          <Alert variant="danger">
-            <Alert.Heading>UNDER CONSTRUCTION!!!</Alert.Heading>
-          </Alert>
-        </Col>
-      </Row> */}
-
       {/* title/subtitle */}
       <Row className="" style={{ paddingTop: "2em" }}>
         <Col className="text-center">
@@ -61,7 +50,7 @@ const App: React.FC = () => {
         <Route path="/pages/Contact" element={<Contact/>} />
         <Route path="/pages/Home" element={<Home/>} />
         <Route path="/" element={<Home/>} />
-        <Route path="/" element={<>404 not found</>}  />
+        <Route path="*" element={<>404 not found</>} />
       </Routes>
 
     </Container>  
@@ -77,15 +66,7 @@ const App: React.FC = () => {
       </Row>
     </Container>
 
-    {/* <!-- The core Firebase JS SDK is always required and must be listed first --> */}
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-
-    {/* <!-- TODO: Add SDKs for Firebase products that you want to use 
-    https://firebase.google.com/docs/web/setup#available-libraries --> */}
-    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
-
-
-    </>
+</>
   
   );
 }
