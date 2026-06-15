@@ -18,24 +18,20 @@ const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
 
   const [showModal, setShowModal] = useState(false); 
   const handleShow = () => setShowModal(true);
-  const handleClose = () => {
-    console.log("handle close inside ProjectCard");
-    setShowModal(false);
-    // onClose;
-}
+  const handleClose = () => setShowModal(false);
 
 
-  const createCarouselItem = (image: string) => {
+  const createCarouselItem = (image: string, index: number) => {
     return (
-      <Carousel.Item>
-        <img src={image} alt={image} style={{width:"100%", minHeight:"17em", maxHeight: "30em"}}/>
+      <Carousel.Item key={index}>
+        <img src={image} alt="" role="presentation" style={{width:"100%", minHeight:"17em", maxHeight: "30em"}}/>
       </Carousel.Item>
-    ); 
+    );
   }
   const createCarousel = () => {
     let imgs:JSX.Element[] = [];
-    ProjectCardProps.projectImages?.forEach(image => {
-      imgs.push(createCarouselItem(image)); 
+    ProjectCardProps.projectImages?.forEach((image, index) => {
+      imgs.push(createCarouselItem(image, index));
     })
     return imgs;
 
@@ -71,8 +67,7 @@ const ProjectCard: React.FC<ProjectCardProps> = (ProjectCardProps) => {
             </Modal.Footer>
           </Modal>
 
-        {/* <Button onClick={createCarousel}>get images</Button> */}
-    </>
+</>
   
   );
 }

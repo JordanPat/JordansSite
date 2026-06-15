@@ -1,12 +1,13 @@
-import React, {} from 'react';
+import React from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
-import {NavLink as Link} from 'react-router-dom';
+import { NavLink as Link, useLocation } from 'react-router-dom';
 
 
 const Navigation: React.FC = () => {
+    const { pathname } = useLocation();
 
     return(
-        <Nav className="justify-content-center" activeKey="/pages/Home" variant="tabs">
+        <Nav className="justify-content-center" activeKey={pathname} variant="tabs">
             <NavItem>
                 <Link to="/pages/Home" className="nav-link">Home</Link>
             </NavItem>
