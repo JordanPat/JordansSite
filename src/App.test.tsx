@@ -4,10 +4,10 @@ import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
 test('renders portfolio heading', () => {
-  const { getByText } = render(
+  const { getByRole } = render(
     <MemoryRouter>
       <App />
     </MemoryRouter>
   );
-  expect(getByText(/jordan barrilleaux/i)).toBeInTheDocument();
+  expect(getByRole('heading', { level: 1, name: /jordan barrilleaux/i })).toBeInTheDocument();
 });
